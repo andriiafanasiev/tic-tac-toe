@@ -49,7 +49,7 @@ export default function Board() {
     status = 'Наступний гравець: ' + (xIsNext ? 'X' : 'O');
   }
   return (
-    <>
+    <div className="board">
       <div className="status">{status}</div>
       <div className="board-row">
         <Square
@@ -102,6 +102,6 @@ export default function Board() {
           value={squares[8]}
         />
       </div>
-    </>
+    </div>
   );
 }
