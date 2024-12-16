@@ -44,13 +44,32 @@ export default function Board() {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = 'Переможець: ' + winner;
+    status = 'Winner: ' + winner;
   } else {
-    status = 'Наступний гравець: ' + (xIsNext ? 'X' : 'O');
+    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
+  setTimeout(() => {
+    document.querySelector('.message').style.display = 'none';
+  }, 2000);
   return (
     <div className="board">
-      <div className="status">{status}</div>
+      <h2
+        className="message"
+        style={{
+          textAlign: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          height: '100%',
+          fontSize: '2rem',
+          backgroundColor: 'white',
+          position: 'absolute',
+        }}
+      >
+        Game begins!
+      </h2>
+      ;<div className="status">{status}</div>
       <div className="board-row">
         <Square
           className="square"
